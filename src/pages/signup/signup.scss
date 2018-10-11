@@ -1,14 +1,20 @@
 page-signup {
    .imagecontainer {
-      position: relative;
+      position: fixed;
       text-align: center;
       color: white;
+      background-color: purple;
+   }
+   .toolBar {
+      text-align: center;
+      color: white;
+      background-color: purple;
    }
    
-   .centered {
+   .centered disable-hover button button-ios button-default button-default-ios button-round button-round-ios button-full button-full-ios button-ios-light,
+   .centered disable-hover button button-ios button-default button-default-ios button-round button-round-ios button-full button-full-ios button-ios-light-ios,
+   .centered disable-hover button button-ios button-default button-default-ios button-round button-round-ios button-full button-full-ios button-ios-light-md {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      top: 350px;
    }
 }

@@ -10,5 +10,8 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
-
+  goToApi()
+  {
+   // this.navCtrl.push({ApiExPage});
+  }
 }

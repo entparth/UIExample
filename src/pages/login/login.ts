@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormBuilder, Validators } from '@angular/forms';
 import { EmailValidator } from '../../validators/emailvalidator';
+import { FirebaseProvider } from '../../providers/firebase/firebase';
+import { HomePage } from '../home/home';
+import {SignupPage} from '../signup/signup';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -15,22 +19,43 @@ import { EmailValidator } from '../../validators/emailvalidator';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-  signupForm:any;
+  loginForm:any;
   valuePage:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder) {
+  error: boolean = false;
+  errorTwo: boolean = false;
+  errorTwoMsg: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder,public fireData:FirebaseProvider) {
     this.valuePage='login'
   this.initializeForm();
   }
   initializeForm() {
-    this.signupForm= this.formBuilder.group({
+    this.loginForm= this.formBuilder.group({
       email: ['', Validators.compose([Validators.required, EmailValidator.isValid])],
       password: ['', Validators.compose([Validators.required])]
 
     })
   }
-
+  goSignup()
+  {
+    this.navCtrl.push(SignupPage);
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
+  login() {
+    if (!this.loginForm.valid) {
+      console.log("fill fields first");
+    }
+    else {
+      this.fireData.loginData(this.loginForm.value.email, this.loginForm.value.password).then((data) => {
+        console.log(this.loginForm.value.email, this.loginForm.value.password);
+        this.navCtrl.setRoot(HomePage);
+      }).catch((error) => {
+        console.log(error);
+        
+      })
 
+    }
+
+}
 }

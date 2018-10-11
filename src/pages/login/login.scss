@@ -10,6 +10,24 @@ page-login {
    h6 {
       text-align: center;
    }
+   .toolBar toolbar toolbar-ios statusbar-padding,
+   .toolBar toolbar toolbar-ios statusbar-padding-ios,
+   .toolBar toolbar toolbar-ios statusbar-padding-md {
+      position: relative;
+      padding: relative;
+      top: 1em;
+   }
+   .centered disable-hover button button-ios button-default button-default-ios button-round button-round-ios button-full button-full-ios button-ios-light,
+   .centered disable-hover button button-ios button-default button-default-ios button-round button-round-ios button-full button-full-ios button-ios-light-ios,
+   .centered disable-hover button button-ios button-default button-default-ios button-round button-round-ios button-full button-full-ios button-ios-light-md {
+      position: absolute;
+      top: 360px;
+   }
+   .toolbar-title toolbar-title,
+   .toolbar-title toolbar-title-ios,
+   .toolbar-title toolbar-title-md {
+      color: white;
+   }
    .centered {
       position: absolute;
       top: 50%;
