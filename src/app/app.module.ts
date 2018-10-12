@@ -8,16 +8,21 @@ import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup';
 import { LoginPage } from '../pages/login/login';
 import { FirebaseProvider } from '../providers/firebase/firebase';
-
+import { HttpModule } from '@angular/http';
+import { DescriptionPage } from '../pages/description/description';
+import { IonicStorageModule } from '@ionic/storage';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    DescriptionPage
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    IonicStorageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -25,7 +30,8 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
     MyApp,
     HomePage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    DescriptionPage
   ],
   providers: [
     StatusBar,
