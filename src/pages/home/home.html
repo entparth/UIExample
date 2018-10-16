@@ -10,36 +10,36 @@
 
 
   <form>
-  <h1 (click)=goToApi(item) *ngIf="!this.flag" class="blinking">
+  <h1 (click)=goToApi(item)  >
     News of the World are here Today.Click here to get to know the news
   </h1>
   <div class="card-background-page" >
-    <ion-card *ngFor="let item of result" (click)="descr(item.title,item.thumbnailUrl,item.albumId,item.id,this.date2Var)">
+    <ion-card *ngFor="let item of result">
       
       <ion-card-content>
       <ion-item>
         <h2 class="ellipsis">{{item.title}}</h2>
         <p>{{this.dateVar}}</p>
       </ion-item>
-      <img [src]="item.thumbnailUrl" />
+      <img [src]="item.urlToImage" />
       </ion-card-content>
       <ion-row>
         <ion-col>
           <button ion-button icon-start clear small>
             <ion-icon name="thumbs-up"></ion-icon>
-            <div>{{item.albumId}} Likes</div>
+            <div>5 Likes</div>
           </button>
         </ion-col>
         <ion-col>
           <button ion-button icon-start clear small>
             <ion-icon name="text"></ion-icon>
-            <div>{{item.id}} Comments</div>
+            <div>7 Comments</div>
           </button>
         </ion-col>
         <ion-col center text-center>
           <div>
           <ion-note>
-            {{this.date2Var}}
+            {{this.publishedAt}}
           </ion-note>
           </div>
         </ion-col>
