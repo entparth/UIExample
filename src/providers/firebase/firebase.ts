@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
+import * as _ from "lodash";
 
 /*
   Generated class for the FirebaseProvider provider.
@@ -18,7 +19,17 @@ export class FirebaseProvider {
   return new Promise((resolve, reject) => {
     firebase.auth().createUserWithEmailAndPassword(email, password).then((newUser) => {
       console.log("New Created user Data===",newUser);
-      
+      // firebase.database().ref('/Users').child(newUser.uid).set({
+      //   email: email,
+      //   Name: name,
+        
+      //   uid: newUser.uid,
+      //   password: password,
+      //   contact:contact
+        
+      //   // profileurl: profileurl,
+
+      // });
       resolve(newUser);
      
     }).catch((error) => {
@@ -28,6 +39,23 @@ export class FirebaseProvider {
     });
 
   });
+}
+getAppData()
+{
+  
+    return new Promise((resolve, reject) => {
+      var dbRef = firebase.database().ref('/users/')
+      dbRef.on('value', (users) => {
+        var allUserData = _.toArray(users.val());
+        console.log("All Users data=", allUserData);
+        
+        
+        resolve(allUserData);
+      })
+    }).catch((error) => {
+      console.log(error);
+    })
+  
 }
   loginData(email: string, password: string) {
     return new Promise((resolve, reject) => {

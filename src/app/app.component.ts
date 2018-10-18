@@ -39,9 +39,18 @@ export class MyApp {
 
       if (!user) {
         this.splashScreen.hide();
+        // this.rootPage = LoginPage;
         this.rootPage = HomePage;
 
+      }
+      else
+      {
+        this.fireData.getAppData().then(() => {
+          this.rootPage = HomePage;
 
+          this.splashScreen.hide();
+
+        });
       }
 
       

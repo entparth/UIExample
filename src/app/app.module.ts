@@ -11,13 +11,15 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { HttpModule } from '@angular/http';
 import { DescriptionPage } from '../pages/description/description';
 import { IonicStorageModule } from '@ionic/storage';
+import { BitcoinPage } from '../pages/bitcoin/bitcoin';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
     SignupPage,
-    DescriptionPage
+    DescriptionPage,
+    BitcoinPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     LoginPage,
     SignupPage,
-    DescriptionPage
+    DescriptionPage,
+    BitcoinPage
   ],
   providers: [
     StatusBar,

@@ -10,6 +10,7 @@
 
 
   <form>
+    <button ion-button (click)="goTobit()"></button>
   <h1 (click)=goToApi(item) *ngIf="!this.flag" >
     News of the World are here Today.Click here to get to know the news
   </h1>
@@ -75,7 +76,7 @@
     <ion-input type="text"  name="comment" ></ion-input>
     <button ion-button  (click)="setComment()">submit</button>
       </div>
-  
+      
   </form>
 </ion-content>
 

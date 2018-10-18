@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 import * as moment from 'moment';
 import { DescriptionPage } from '../description/description';
 import * as _ from 'underscore'; 
+import { BitcoinPage } from '../bitcoin/bitcoin';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -33,7 +34,7 @@ export class HomePage {
   {
     this.like++;
   }
-  getView(id: number, albumId: number,title:string,thumbnailUrl:string,date:any)
+  getView(id: number, albumId: numberp,title:string,thumbnailUrl:string,date:any)
   {
     this.view++;
     console.log("going to description page");
@@ -55,6 +56,10 @@ export class HomePage {
   {
     this.commentFlag = false;
     this.comment++;
+  }
+  goTobit()
+  {
+    this.navCtrl.push(BitcoinPage);
   }
   goToApi()
   { this.flag=true;
