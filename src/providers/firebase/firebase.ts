@@ -18,22 +18,13 @@ export class FirebaseProvider {
   return new Promise((resolve, reject) => {
     firebase.auth().createUserWithEmailAndPassword(email, password).then((newUser) => {
       console.log("New Created user Data===",newUser);
-      // firebase.database().ref('/Users').child(newUser.id).set({
-        
-      //   Name: name,
-      //   Email: email,
-      //   Contact: contact,
-      //  // uid: newUser.uid,
-      //   Password: password,        
-      //   }
-      // );
-
+      
       resolve(newUser);
      
     }).catch((error) => {
       console.log('Error getting location', error);
       reject(error);
-      // });
+      
     });
 
   });
@@ -43,11 +34,11 @@ export class FirebaseProvider {
       return firebase.auth().signInWithEmailAndPassword(email, password).then((data) => {
         console.log(data);
        
-        //console.log("customer id=", data.uid);
+      
         resolve(data);
       }).catch(function (error) {
         if (error) {
-          // var errorCode = error.code;
+          
           var errorMessage = error.message;
           console.log('error on sign in ', errorMessage)
           reject(error);
