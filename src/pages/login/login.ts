@@ -5,6 +5,8 @@ import { EmailValidator } from '../../validators/emailvalidator';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { HomePage } from '../home/home';
 import {SignupPage} from '../signup/signup';
+import { ForgetPage } from '../forget/forget';
+
 
 /**
  * Generated class for the LoginPage page.
@@ -37,7 +39,12 @@ export class LoginPage {
   }
   goToSignup()
   {
-    this.navCtrl.push(SignupPage);
+    // this.navCtrl.push(SignupPage);
+    this.navCtrl.setRoot(SignupPage);
+  }
+  forgot()
+  {
+    this.navCtrl.push(ForgetPage);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');

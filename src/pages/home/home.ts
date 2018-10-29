@@ -34,7 +34,7 @@ export class HomePage {
   {
     this.like++;
   }
-  getView(id: number, albumId: numberp,title:string,thumbnailUrl:string,date:any)
+  getView(id: number, albumId: number,title:string,thumbnailUrl:string,date:any)
   {
     this.view++;
     console.log("going to description page");
@@ -57,13 +57,13 @@ export class HomePage {
     this.commentFlag = false;
     this.comment++;
   }
-  goTobit()
+  goToBit()
   {
     this.navCtrl.push(BitcoinPage);
   }
   goToApi()
   { this.flag=true;
-     
+     console.log("flag value==",this.flag);
       let url = '../../assets/json/dummy.json';
       this.http.get(url).map(res=>res.json()).subscribe(
         data=>{

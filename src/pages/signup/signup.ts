@@ -4,6 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { EmailValidator } from '../../validators/emailvalidator';
 import { HomePage } from '../home/home';
+import { LoginPage } from '../login/login';
 /**
  * Generated class for the SignupPage page.
  *
@@ -35,7 +36,7 @@ export class SignupPage {
 }
   signupMessage()
   {
-    if (this.secondForm.valid) {
+    if (!this.secondForm.valid) {
       
     }
     else {
@@ -48,6 +49,10 @@ export class SignupPage {
         console.log(error);        
       })
   }
+}
+goToLogin()
+{
+  this.navCtrl.push(LoginPage)
 }
   ionViewDidLoad() {
     console.log('ionViewDidLoad SignupPage');

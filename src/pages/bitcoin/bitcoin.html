@@ -14,12 +14,13 @@
 
 
 <ion-content padding>
+<form>
 <button ion-button color="default" (click)="fetchData()"></button>
-<ion-list *ngFor="let item of this.result[0].data;let index=i">
-  <!-- <div *ngFor="let bit of items;let index=j"> -->
+<ion-list *ngIf="flag">
+ <ion-item *ngFor="let item of this.result1[0].Data;let index=i">
   <p>{{item.time}}</p>
   <p>{{item.volume}}</p>
-  <!-- </div> -->
+ </ion-item>
   </ion-list>
-  
+  </form>
 </ion-content>

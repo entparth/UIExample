@@ -12,6 +12,9 @@ import { HttpModule } from '@angular/http';
 import { DescriptionPage } from '../pages/description/description';
 import { IonicStorageModule } from '@ionic/storage';
 import { BitcoinPage } from '../pages/bitcoin/bitcoin';
+import { ForgetPage } from '../pages/forget/forget';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -19,7 +22,8 @@ import { BitcoinPage } from '../pages/bitcoin/bitcoin';
     LoginPage,
     SignupPage,
     DescriptionPage,
-    BitcoinPage
+    BitcoinPage,
+    ForgetPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,8 @@ import { BitcoinPage } from '../pages/bitcoin/bitcoin';
     LoginPage,
     SignupPage,
     DescriptionPage,
-    BitcoinPage
+    BitcoinPage,
+    ForgetPage
   ],
   providers: [
     StatusBar,

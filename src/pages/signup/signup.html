@@ -6,8 +6,9 @@
 -->
 <ion-header style=" background-color: purple;">
   <ion-navbar>
+    <ion-icon name="arrow-round-back" (click)="goToLogin()"></ion-icon>
 <div class="bar bar-header bar-royal" style="text-align:center;color: white">
-  <h3 class="title">bar-royal</h3>
+  <h3 class="title">Signup</h3>
 </div>
 </ion-navbar>
 </ion-header>
@@ -17,20 +18,20 @@
   <div>
   <form [formGroup]="secondForm" novalidate>
  <ion-item>
-  <ion-input #name type="text" name="name" formControlName="name" [(ngModel)]="user.name" placeholder="Enter First Name" style="position:absolute"></ion-input>
+  <ion-input #name type="text" name="name" formControlName="name"  placeholder="Enter First Name" style="position:absolute"></ion-input>
 </ion-item> 
 <ion-item>
 <p class="centered">Personal Information</p>
 </ion-item>
 <ion-item>
-  <ion-input #email type="email" name="email" formControlName="email" [(ngModel)]="user.email" placeholder="Enter Emailid"  style="position:absolute"></ion-input>
+  <ion-input #email type="email" name="email" formControlName="email"  placeholder="Enter Emailid"  style="position:absolute"></ion-input>
 </ion-item>
 <ion-item>
-  <ion-input #contact type="text" name="contact" formControlName="contact" [(ngModel)]="user.email"  placeholder="Enter Contact Number" style="position:absolute"></ion-input>
+  <ion-input #contact type="text" name="contact" formControlName="contact"   placeholder="Enter Contact Number" style="position:absolute"></ion-input>
 </ion-item>
 <ion-item>
   <ion-item>
-  <ion-input #password type="password" name="password" [(ngModel)]="user.password" formControlName="password" placeholder="Enter password" style="position:absolute"></ion-input>
+  <ion-input #password type="password" name="password"  formControlName="password" placeholder="Enter password" style="position:absolute"></ion-input>
   </ion-item>  
 </ion-item>
 <div padding></div>

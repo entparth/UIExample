@@ -11,7 +11,7 @@ import { HomePage } from '../pages/home/home';
   templateUrl: 'app.html'
 })
 export class MyApp {
- rootPage: any = HomePage;
+ rootPage: any;
 
   constructor(platform: Platform, statusBar: StatusBar, public splashScreen: SplashScreen, public fireData:FirebaseProvider) {
     platform.ready().then(() => {
@@ -40,7 +40,7 @@ export class MyApp {
       if (!user) {
         this.splashScreen.hide();
         // this.rootPage = LoginPage;
-        this.rootPage = HomePage;
+        this.rootPage = LoginPage;
 
       }
       else

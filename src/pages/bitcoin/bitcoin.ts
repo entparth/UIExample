@@ -26,6 +26,7 @@ export class BitcoinPage {
   fetchData()
   {
     let url = 'https://min-api.cryptocompare.com/data/exchange/histohour?tsym=USD&limit=70';
+    console.log("url is",url)
     this.http.get(url).map(res => res.json()).subscribe(
       data => {
         this.result1.push(data); 
@@ -34,7 +35,7 @@ export class BitcoinPage {
         
         
         console.log("0thh dta==>",this.result1)
-        
+        console.log(this.result1[0].Data[0].time)
         
        
       })

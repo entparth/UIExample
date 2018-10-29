@@ -76,4 +76,16 @@ getAppData()
       });
     });
   }
+  forgotPassword(email) {
+    return new Promise((resolve, reject) => {
+      firebase.auth().sendPasswordResetEmail(email).then((data) => {
+        // console.log(data);
+        resolve({ sucess: true });
+      }).catch((err) => {
+        console.log(err);
+        reject(err);
+      })
+    })
+
+  }
 }
