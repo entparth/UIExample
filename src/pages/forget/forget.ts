@@ -16,6 +16,7 @@ export class ForgetPage {
   error: boolean = false;
   errorMsg: any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public fireData:FirebaseProvider,public formBuilder:FormBuilder,public alertCtrl:AlertController) {
+    this.initializeForm();
   }
 
   ionViewDidLoad() {

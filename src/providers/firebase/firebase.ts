@@ -19,22 +19,22 @@ export class FirebaseProvider {
   return new Promise((resolve, reject) => {
     firebase.auth().createUserWithEmailAndPassword(email, password).then((newUser) => {
       console.log("New Created user Data===",newUser);
-      // firebase.database().ref('/Users').child(newUser.uid).set({
-      //   email: email,
-      //   Name: name,
+    //   firebase.database().ref('/Users').child(newUser.uid).set({
+    //     email: email,
+    //     Name: name,
         
-      //   uid: newUser.uid,
-      //   password: password,
-      //   contact:contact
+    //     uid: newUser.uid,
+    //     password: password,
+    //     contact:contact
         
-      //   // profileurl: profileurl,
+      
 
-      // });
-      resolve(newUser);
+    //   });
+    //   resolve(newUser);
      
-    }).catch((error) => {
-      console.log('Error getting location', error);
-      reject(error);
+    // }).catch((error) => {
+    //   console.log('Error getting location', error);
+    //   reject(error);
       
     });
 
