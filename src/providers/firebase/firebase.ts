@@ -16,29 +16,25 @@ export class FirebaseProvider {
   }
   signupData(name: any, email: any, contact: any, password: any)
 {
-  return new Promise((resolve, reject) => {
-    firebase.auth().createUserWithEmailAndPassword(email, password).then((newUser) => {
-      console.log("New Created user Data===",newUser);
-    //   firebase.database().ref('/Users').child(newUser.uid).set({
-    //     email: email,
-    //     Name: name,
-        
-    //     uid: newUser.uid,
-    //     password: password,
-    //     contact:contact
-        
-      
-
-    //   });
-    //   resolve(newUser);
-     
-    // }).catch((error) => {
-    //   console.log('Error getting location', error);
-    //   reject(error);
-      
+    let userData = {
+      email: email,
+      Name: name,
+      contact: contact,
+      password:password
+    };
+ 
+    return new Promise((resolve, reject) => {
+      firebase.auth().createUserWithEmailAndPassword(email, password).then((newUser) => {
+        console.log("New Created user Data===", newUser);
+        console.log("uid==========>", newUser.user.uid)
+        firebase.database().ref('/users').child(newUser.user.uid).set(userData).then((data) => {
+          console.log("user data main data module", data);
+          resolve(newUser.user);
+        });
+      });
     });
 
-  });
+  
 }
 getAppData()
 {

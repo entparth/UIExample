@@ -17,6 +17,7 @@ export class BitcoinPage {
   result1:any=[];
   result2: any = [];
   result3: any = [];
+  flag:boolean=false;
   constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
   }
 
@@ -25,6 +26,7 @@ export class BitcoinPage {
   }
   fetchData()
   {
+    this.flag=true;
     let url = 'https://min-api.cryptocompare.com/data/exchange/histohour?tsym=USD&limit=70';
     console.log("url is",url)
     this.http.get(url).map(res => res.json()).subscribe(
